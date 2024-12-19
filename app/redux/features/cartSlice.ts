@@ -21,8 +21,6 @@ export const cartSlice = createSlice({
         state.push(action.payload);
       } else {
         return state.map((item) => {
-          console.log(item.id, action.payload.id);
-
           return item.id === action.payload.id
             ? { ...item, quantity: item.quantity + 1 }
             : item;
